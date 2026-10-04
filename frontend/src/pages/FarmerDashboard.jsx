@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import translations from "./translations";
+import API_URL from "../services/api";
 
 function FarmerDashboard() {
   const navigate = useNavigate();
@@ -160,7 +161,7 @@ function FarmerDashboard() {
     try {
       const response =
         await axios.get(
-          "http://127.0.0.1:8000/queue",
+          `${API_URL}/queue`,
           {
             params: {
               time: Date.now(),
@@ -214,7 +215,7 @@ function FarmerDashboard() {
     try {
       const response =
         await axios.get(
-          `http://127.0.0.1:8000/eta/${tokenId}`
+          `${API_URL}/eta/${tokenId}`
         );
 
       console.log(
@@ -266,7 +267,7 @@ function FarmerDashboard() {
     const connectWebSocket = () => {
       try {
         socket = new WebSocket(
-          "ws://127.0.0.1:8000/ws"
+          `${WS_URL}/ws`
         );
 
         socket.onopen = () => {

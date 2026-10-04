@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import translations from "./translations";
+import API_URL from "../services/api";
 
 function Alerts() {
   const [alerts, setAlerts] = useState([]);
@@ -19,7 +20,7 @@ function Alerts() {
     const connectWebSocket = () => {
       try {
         socket = new WebSocket(
-          "ws://127.0.0.1:8000/ws"
+          `${WS_URL}/ws`
         );
 
         socket.onopen = () => {

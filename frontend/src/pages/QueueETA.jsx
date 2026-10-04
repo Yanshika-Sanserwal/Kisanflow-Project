@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import translations from "./translations";
+import API_URL from "../services/api";
 
 function QueueETA() {
   const [queue, setQueue] = useState([]);
@@ -109,7 +110,7 @@ function QueueETA() {
       // Get all queue tokens
       const queueResponse =
         await axios.get(
-          "http://127.0.0.1:8000/queue",
+          `${API_URL}/queue`,
           {
             params: {
               time: Date.now(),
@@ -195,7 +196,7 @@ function QueueETA() {
 
       const etaResponse =
         await axios.get(
-          `http://127.0.0.1:8000/eta/${tokenId}`
+          `${API_URL}/eta/${tokenId}`
         );
 
       console.log(
@@ -213,7 +214,7 @@ function QueueETA() {
 
       const guidanceResponse =
         await axios.get(
-          `http://127.0.0.1:8000/arrival-guidance/${tokenId}`
+          `${API_URL}/arrival-guidance/${tokenId}`
         );
 
       console.log(

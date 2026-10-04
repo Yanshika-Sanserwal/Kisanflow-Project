@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import translations from "./translations";
+import API_URL from "../services/api";
 
 function MyProcurement() {
   const [tokens, setTokens] = useState([]);
@@ -46,7 +47,7 @@ function MyProcurement() {
 
       const response =
         await axios.get(
-          "http://127.0.0.1:8000/my-procurement",
+          `${API_URL}/my-procurement`,
           {
             params: {
               centre_id: centreId,

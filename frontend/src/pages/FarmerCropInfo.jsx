@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import translations from "./translations";
 import "./FarmerCropInfo.css";
+import API_URL from "../services/api";
 
 function FarmerCropInfo() {
   const navigate = useNavigate();
@@ -176,7 +177,7 @@ function FarmerCropInfo() {
       // ======================================
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/farmers",
+        `${API_URL}/farmers`,
         {
           name: formData.name,
           mobile: formData.mobile,

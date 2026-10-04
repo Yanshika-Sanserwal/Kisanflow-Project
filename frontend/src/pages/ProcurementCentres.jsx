@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import translations from "./translations";
+import API_URL from "../services/api";
 
 function ProcurementCentres() {
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ function ProcurementCentres() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/centres")
+      .get(`${API_URL}/centres`)
       .then((response) => {
         console.log("Centres:", response.data);
         setCentres(response.data);
@@ -176,7 +177,7 @@ function ProcurementCentres() {
       }
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/available-slots",
+        `${API_URL}/available-slots`,
         {
           params: {
             centre_id: centre.id,
@@ -226,7 +227,7 @@ function ProcurementCentres() {
       setLoadingSlots(true);
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/available-slots",
+        `${API_URL}/available-slots`,
         {
           params: {
             centre_id:
@@ -311,7 +312,7 @@ function ProcurementCentres() {
 
         const slotResponse =
           await axios.post(
-            "http://127.0.0.1:8000/slots",
+            `${API_URL}/slots`,
             {
               farmer_id: farmerId,
               centre_id:
@@ -337,7 +338,7 @@ function ProcurementCentres() {
 
         const tokenResponse =
           await axios.post(
-            "http://127.0.0.1:8000/tokens",
+            `${API_URL}/tokens`,
             {
               slot_id: slotId,
             }

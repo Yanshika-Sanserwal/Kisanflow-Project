@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./OperatorDashboard.css";
+import API_URL from "../services/api";
 
-const API_URL = "http://127.0.0.1:8000";
 
 function OperatorDashboard() {
   const [queue, setQueue] = useState([]);
@@ -103,7 +103,7 @@ function OperatorDashboard() {
     const connectWebSocket = () => {
       try {
         socket = new WebSocket(
-          "ws://127.0.0.1:8000/ws"
+          `${WS_URL}/ws`
         );
 
         socket.onopen = () => {
