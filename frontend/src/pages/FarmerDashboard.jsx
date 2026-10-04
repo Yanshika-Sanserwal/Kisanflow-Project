@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../App.css";
 import translations from "./translations";
 import API_URL from "../services/api";
+const WS_URL = API_URL.replace(/^http/, "ws");
 
 function FarmerDashboard() {
   const navigate = useNavigate();

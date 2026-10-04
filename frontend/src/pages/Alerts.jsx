@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import translations from "./translations";
 import API_URL from "../services/api";
+const WS_URL = API_URL.replace(/^http/, "ws");
 
 function Alerts() {
   const [alerts, setAlerts] = useState([]);

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./OperatorDashboard.css";
 import API_URL from "../services/api";
+const WS_URL = API_URL.replace(/^http/, "ws");
 
 
 function OperatorDashboard() {
