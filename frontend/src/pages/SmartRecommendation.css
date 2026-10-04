@@ -1,0 +1,527 @@
+/* =========================================
+   SMART RECOMMENDATION PAGE
+========================================= */
+
+.smart-recommendation-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f6f8f7;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.recommendation-header {
+  margin-bottom: 28px;
+}
+
+.recommendation-header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.recommendation-header p {
+  margin: 0;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.recommendation-loading {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.recommendation-loading h2 {
+  margin: 18px 0 8px;
+  color: #1f2937;
+}
+
+.recommendation-loading p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.loading-spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #d1d5db;
+  border-top: 4px solid #2f855a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.recommendation-error {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.error-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.recommendation-error h2 {
+  margin: 0 0 10px;
+  color: #1f2937;
+}
+
+.recommendation-error p {
+  max-width: 500px;
+  margin: 0 0 20px;
+  color: #6b7280;
+}
+
+.back-button {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 20px;
+  background: #2f855a;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-button:hover {
+  background: #276749;
+}
+
+
+/* =========================================
+   FARMER SUMMARY
+========================================= */
+
+.farmer-summary-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.summary-title {
+  margin-bottom: 20px;
+}
+
+.summary-title h2 {
+  margin: 0;
+  font-size: 19px;
+  color: #1f2937;
+}
+
+.farmer-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.summary-icon {
+  font-size: 24px;
+}
+
+.summary-item small {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.summary-item strong {
+  display: block;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+
+/* =========================================
+   RECOMMENDATIONS SECTION
+========================================= */
+
+.recommendations-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  color: #1f2937;
+}
+
+.section-heading p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+
+/* =========================================
+   RECOMMENDATION GRID
+========================================= */
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+
+/* =========================================
+   RECOMMENDATION CARD
+========================================= */
+
+.recommendation-card {
+  position: relative;
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   RECOMMENDED BADGE
+========================================= */
+
+.recommended-badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #ecfdf5;
+  color: #16803c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CENTRE HEADER
+========================================= */
+
+.centre-card-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.centre-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #ecfdf5;
+  font-size: 24px;
+}
+
+.centre-title {
+  min-width: 0;
+}
+
+.centre-title h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+  color: #1f2937;
+}
+
+.centre-title p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+
+/* =========================================
+   SMART MATCH
+========================================= */
+
+.smart-match {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  margin-bottom: 17px;
+  border-radius: 11px;
+  background: #f0fdf4;
+}
+
+.smart-match span {
+  font-size: 13px;
+  color: #166534;
+  font-weight: 600;
+}
+
+.smart-match strong {
+  font-size: 18px;
+  color: #16803c;
+}
+
+
+/* =========================================
+   CENTRE STATS
+========================================= */
+
+.centre-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.stat-box {
+  padding: 12px 8px;
+  text-align: center;
+  border-radius: 11px;
+  background: #f9fafb;
+}
+
+.stat-icon {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.stat-box small {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.stat-box strong {
+  display: block;
+  font-size: 13px;
+  color: #1f2937;
+}
+
+
+/* =========================================
+   CONGESTION
+========================================= */
+
+.congestion-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.congestion-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.congestion-badge.low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.congestion-badge.moderate {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.congestion-badge.high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+
+/* =========================================
+   SELECT CENTRE BUTTON
+========================================= */
+
+.select-centre-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 15px;
+  background: #2f855a;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.select-centre-button:hover {
+  background: #276749;
+}
+
+.select-centre-button span {
+  font-size: 18px;
+}
+
+
+/* =========================================
+   NO CENTRES
+========================================= */
+
+.no-centres {
+  padding: 50px 20px;
+  text-align: center;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.no-centres-icon {
+  margin-bottom: 12px;
+  font-size: 42px;
+}
+
+.no-centres h3 {
+  margin: 0 0 8px;
+  color: #1f2937;
+}
+
+.no-centres p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   INFORMATION BOX
+========================================= */
+
+.recommendation-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #dbeafe;
+  border-radius: 15px;
+  background: #eff6ff;
+}
+
+.info-icon {
+  font-size: 25px;
+}
+
+.recommendation-info h3 {
+  margin: 0 0 7px;
+  font-size: 16px;
+  color: #1e3a8a;
+}
+
+.recommendation-info p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .farmer-summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .recommendation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .smart-recommendation-page {
+    padding: 20px 15px;
+  }
+
+  .recommendation-header h1 {
+    font-size: 24px;
+  }
+
+  .farmer-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .centre-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .recommendation-info {
+    padding: 16px;
+  }
+}

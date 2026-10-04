@@ -1,0 +1,238 @@
+
+.admin-dashboard {
+  min-height: 100vh;
+  background: #f6f8f7;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #1b5e20;
+}
+
+.admin-header p {
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.admin-refresh-button {
+  border: none;
+  background: #2e7d32;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-refresh-button:hover {
+  background: #1b5e20;
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.admin-error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   MAIN STATS
+========================================= */
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.admin-stat-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #e8f5e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.admin-stat-card p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.admin-stat-card h2 {
+  margin: 5px 0 0;
+}
+
+/* =========================================
+   STATUS STATS
+========================================= */
+
+.admin-status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.admin-status-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-status-card h3 {
+  margin-top: 0;
+}
+
+.admin-status-card h2 {
+  margin-bottom: 5px;
+  color: #2e7d32;
+}
+
+.admin-status-card p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.admin-section {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-section-header {
+  margin-bottom: 18px;
+}
+
+.admin-section-header h2 {
+  margin: 0;
+}
+
+.admin-section-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 12px;
+  background: #f1f5f3;
+  color: #374151;
+  font-size: 14px;
+}
+
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-table tr:hover {
+  background: #fafafa;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.admin-empty {
+  text-align: center;
+  padding: 35px;
+  color: #6b7280;
+}
+
+.admin-empty > div {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.admin-loading {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .admin-stats-grid,
+  .admin-status-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-dashboard {
+    padding: 15px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-stats-grid,
+  .admin-status-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
