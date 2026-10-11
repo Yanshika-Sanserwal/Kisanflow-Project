@@ -384,6 +384,35 @@ def create_slot(
 # GET ALL BOOKINGS
 # ============================================================
 
+from sqlalchemy import text
+
+@app.get("/db-check")
+def check_database():
+    try:
+        with engine.connect() as connection:
+            database_name = engine.dialect.name
+
+            if database_name == "postgresql":
+                result = connection.execute(
+                    text("SELECT current_database()")
+                )
+                database = result.scalar()
+            else:
+                database = "SQLite"
+
+        return {
+            "database_engine": database_name,
+            "database": database,
+            "connection": "successful"
+        }
+
+    except Exception:
+        return {
+            "connection": "failed",
+            "message": "Database connection failed. Check server logs."
+        }
+
+
 @app.get("/slots")
 def get_slots(
     db: Session = Depends(get_db)
